@@ -1,0 +1,322 @@
+@import url(mixins.less);
+
+/* fadeIn animation */
+
+@keyframes fadeIn {
+  0% {
+    opacity:   0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:        0;
+    -moz-transform: translateX(30px);
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:           0;
+    -webkit-transform: translateX(30px);
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity:      0;
+    -o-transform: translateX(30px);
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity:       0;
+    -ms-transform: translateX(30px);
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* FadeOut animation */
+
+@keyframes fadeOut {
+  99% {
+    opacity:   0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fadeOut {
+  99% {
+    opacity:        0;
+    -moz-transform: translateX(30px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  99% {
+    opacity:           0;
+    -webkit-transform: translateX(30px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes fadeOut {
+  99% {
+    opacity:      0;
+    -o-transform: translateX(30px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-ms-keyframes fadeOut {
+  99% {
+    opacity:       0;
+    -ms-transform: translateX(30px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Element styling Courtesy of Thibaut Courouble */
+
+/*
+ * Copyright (c) 2012-2013 Thibaut Courouble
+ * http://www.cssflow.com
+ *
+ * Licensed under the MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+@notifPaddingTop: 25px;
+@notifPaddingLeft: 30px;
+@notifCircleWidth: 50px;
+
+.notif-container {
+  right:    5px;
+  position: fixed;
+  top:      5px;
+  z-index:  9999;
+}
+
+.notif {
+  background:    @body-bg-color;
+  border:        3px solid @body-border-color;
+  font-size:     0.85em;
+  position:      relative;
+  padding:       20px 20px 20px 70px;
+  margin-bottom: 5px;
+  line-height:   1;
+  .opacity(0);
+
+  &:before {
+    background-clip: padding-box;
+    content:         "";
+    height:          100%;
+    left:            0;
+    position:        absolute;
+    top:             0;
+    width:           50px;
+  }
+
+  p {
+    font-size: 11px;
+    color:     #666666;
+  }
+
+  &.notif-opening {
+    animation: fadeIn .2s linear forwards;
+  }
+
+  &.notif-closing {
+    animation: fadeOut .2s linear forwards;
+  }
+
+  &.notif-opened {
+    cursor: pointer;
+    .opacity(0.8);
+    &:hover {
+      .opacity(1);
+    }
+  }
+}
+
+.notif-title {
+  margin:    0 0 5px;
+  font-size: 1em;
+  color:     @body-color;
+
+  &:before, &:after {
+    content:    '';
+    position:   absolute;
+    background: white;
+    .border-radius(2px);
+  }
+}
+
+.notif-succeed {
+  background-color: @green-color-bg;
+  border-color:     @green-color;
+  color:            @green-color-darker;
+  &:before {
+    background: @green-color;
+  }
+
+  .notif-title {
+    color: @green-color-darker;
+    &:before, &:after {
+      height: 12px;
+      left:   25px;
+      top:    20px;
+      width:  4px;
+      .transform(rotate(45deg));
+    }
+
+    &:after {
+      height: 4px;
+      left:   17px;
+      top:    25px;
+      width:  8px;
+    }
+  }
+}
+
+.notif-alert {
+  background-color: @red-color-bg;
+  border-color:     @red-color;
+  color:            @red-color-darker;
+  &:before {
+    background: @red-color;
+  }
+
+  .notif-title {
+    color: @red-color-darker;
+    &:before, &:after {
+      height: 14px;
+      left:   23px;
+      top:    20px;
+      width:  4px;
+      .transform(rotate(45deg));
+    }
+
+    &:after {
+      height: 4px;
+      left:   18px;
+      top:    25px;
+      width:  14px;
+    }
+  }
+}
+
+.notif-warn {
+  background-color: @orange-color-bg;
+  border-color:     @orange-color;
+  color:            @orange-color-darker;
+  &:before {
+    background: @orange-color;
+  }
+
+  .notif-title {
+    color: @orange-color-darker;
+    &:before, &:after {
+      height:     11px;
+      left:       23px;
+      top:        18px;
+      width:      4px;
+      background: #5C562B;
+    }
+
+    &:after {
+      height: 4px;
+      top:    30px;
+    }
+  }
+}
+
+/* IE 8 doesn't support CSS transforms; use Unicode instead. */
+
+.lt-ie9 {
+  .notif-succeed {
+    .notif-title:before {
+      content:    '\2714';
+      display:    block;
+      top:        @notifPaddingTop;
+      left:       @notifPaddingLeft;
+      width:      @notifCircleWidth;
+      font:       bold 18px/50px 'Arial Unicode MS';
+      color:      white;
+      text-align: center;
+      background: none;
+    }
+
+    .notif-title:after {
+      display: none;
+    }
+  }
+
+  .notif-alert {
+    .notif-title:before {
+      content:    '\2716';
+      display:    block;
+      top:        @notifPaddingTop;
+      left:       @notifPaddingLeft;
+      width:      @notifCircleWidth;
+      font:       bold 17px/50px 'Arial Unicode MS';
+      color:      white;
+      text-align: center;
+      background: none;
+    }
+
+    .notif-title:after {
+      display: none;
+    }
+  }
+
+  .notif-close {
+    &:before {
+      content:    '\2716';
+      display:    block;
+      top:        0;
+      left:       0;
+      width:      16px;
+      font:       11px/19px 'Arial Unicode MS';
+      color:      #BBBBBB;
+      text-align: center;
+      background: none;
+    }
+
+    &:after {
+      display: none;
+    }
+    &:hover:before {
+      color: #999999;
+    }
+  }
+}
+

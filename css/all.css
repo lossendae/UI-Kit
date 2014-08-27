@@ -1,0 +1,169 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+.ui-kit * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-kit .form-block {
+  margin-bottom: 0.5em;
+}
+.ui-kit label {
+  display: block;
+  font-size: 1em;
+  line-height: 1em;
+  margin-bottom: 5px;
+}
+.ui-kit input[type="text"],
+.ui-kit input[type="email"],
+.ui-kit input[type="url"],
+.ui-kit input[type="search"],
+.ui-kit input[type="password"],
+.ui-kit input[type="datetime"],
+.ui-kit input[type="tel"],
+.ui-kit input[type="date"],
+.ui-kit input[type="date"],
+.ui-kit input[type="month"],
+.ui-kit input[type="week"],
+.ui-kit input[type="time"],
+.ui-kit input[type="datetime-local"],
+.ui-kit input[type="number"],
+.ui-kit textarea {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 1px solid #CCCCCC;
+  color: #555555;
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1em;
+  padding: 0.5em;
+  vertical-align: middle;
+  width: 100%;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-kit input[type="text"]:hover, .ui-kit input[type="text"]:focus,
+.ui-kit input[type="email"]:hover,
+.ui-kit input[type="email"]:focus,
+.ui-kit input[type="url"]:hover,
+.ui-kit input[type="url"]:focus,
+.ui-kit input[type="search"]:hover,
+.ui-kit input[type="search"]:focus,
+.ui-kit input[type="password"]:hover,
+.ui-kit input[type="password"]:focus,
+.ui-kit input[type="datetime"]:hover,
+.ui-kit input[type="datetime"]:focus,
+.ui-kit input[type="tel"]:hover,
+.ui-kit input[type="tel"]:focus,
+.ui-kit input[type="date"]:hover,
+.ui-kit input[type="date"]:focus,
+.ui-kit input[type="date"]:hover,
+.ui-kit input[type="date"]:focus,
+.ui-kit input[type="month"]:hover,
+.ui-kit input[type="month"]:focus,
+.ui-kit input[type="week"]:hover,
+.ui-kit input[type="week"]:focus,
+.ui-kit input[type="time"]:hover,
+.ui-kit input[type="time"]:focus,
+.ui-kit input[type="datetime-local"]:hover,
+.ui-kit input[type="datetime-local"]:focus,
+.ui-kit input[type="number"]:hover,
+.ui-kit input[type="number"]:focus,
+.ui-kit textarea:hover,
+.ui-kit textarea:focus {
+  background: none repeat scroll 0 0 #FFFFFF;
+  outline: medium none;
+  border-color: #10A4EE;
+}
+.ui-kit .select {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 1px solid #CCCCCC;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  min-width: 150px;
+  width: 100%;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-kit .select > select {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 0 none;
+  color: #555555;
+  display: block;
+  font-size: 1em;
+  line-height: 1em;
+  padding: 0.45em;
+  margin: 0;
+  width: 100%;
+}
+.ui-kit .select:hover, .ui-kit .select:active {
+  color: #555555;
+  border: 1px solid #10A4EE;
+  outline-offset: 0;
+}
+.ui-kit .select:before, .ui-kit .select:after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+}
+.ui-kit .select:before {
+  background: inherit;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  width: 29px;
+}
+.ui-kit .select:after {
+  border-color: #CCCCCC transparent transparent;
+  border-image: none;
+  border-style: solid;
+  border-width: 5px;
+  height: 0;
+  right: 13px;
+  top: 50%;
+  width: 0;
+}
+.ui-kit form.aligned {
+  float: left;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-kit form.aligned label {
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 1em 0 0;
+  width: 25%;
+}
+.ui-kit form.aligned input[type="text"],
+.ui-kit form.aligned input[type="email"],
+.ui-kit form.aligned input[type="url"],
+.ui-kit form.aligned input[type="search"],
+.ui-kit form.aligned input[type="password"],
+.ui-kit form.aligned input[type="datetime"],
+.ui-kit form.aligned input[type="tel"],
+.ui-kit form.aligned input[type="date"],
+.ui-kit form.aligned input[type="date"],
+.ui-kit form.aligned input[type="month"],
+.ui-kit form.aligned input[type="week"],
+.ui-kit form.aligned input[type="time"],
+.ui-kit form.aligned input[type="datetime-local"],
+.ui-kit form.aligned input[type="number"],
+.ui-kit form.aligned textarea,
+.ui-kit form.aligned .select {
+  display: inline-block;
+  width: 70%;
+}

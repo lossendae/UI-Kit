@@ -1,0 +1,324 @@
+@import url(mixins.less);
+
+/* Dialog fadeout */
+
+@keyframes ngdialog-fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes ngdialog-fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes ngdialog-fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes ngdialog-fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-ms-keyframes ngdialog-fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Dialog fadein */
+
+@keyframes ngdialog-fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes ngdialog-fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes ngdialog-fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@-ms-keyframes ngdialog-fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes ngdialog-fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* flipin horizontal */
+
+@keyframes ngdialog-flipin-horizontal {
+  0% {
+    opacity: 0;
+    transform: rotateY(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform : rotateY(0deg);
+  }
+}
+
+@-moz-keyframes ngdialog-flipin-horizontal {
+  0% {
+    opacity: 0;
+    -moz-transform: rotateY(-90deg);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform : rotateY(0deg);
+  }
+}
+
+@-webkit-keyframes ngdialog-flipin-horizontal {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotateY(-90deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform : rotateY(0deg);
+  }
+}
+
+@-o-keyframes ngdialog-flipin-horizontal {
+  0% {
+    opacity: 0;
+    -o-transform: rotateY(-90deg);
+  }
+  100% {
+    opacity: 1;
+    -o-transform : rotateY(0deg);
+  }
+}
+
+@-ms-keyframes ngdialog-flipin-horizontal {
+  0% {
+    opacity: 0;
+    -ms-transform: rotateY(-90deg);
+  }
+  100% {
+    opacity: 1;
+    -ms-transform : rotateY(0deg);
+  }
+}
+
+/* flipout horizontal */
+
+@keyframes ngdialog-flipout-horizontal {
+  0% {
+    opacity: 1;
+    transform : rotateY(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform : rotateY(-90deg);
+  }
+}
+
+@-moz-keyframes ngdialog-flipout-horizontal {
+  0% {
+    opacity: 1;
+    -moz-transform : rotateY(0deg);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform : rotateY(-90deg);
+  }
+}
+
+@-webkit-keyframes ngdialog-flipout-horizontal {
+  0% {
+    opacity: 1;
+    -webkit-transform : rotateY(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform : rotateY(-90deg);
+  }
+}
+
+@-o-keyframes ngdialog-flipout-horizontal {
+  0% {
+    opacity: 1;
+    -o-transform : rotateY(0deg);
+  }
+  100% {
+    opacity: 0;
+    -o-transform : rotateY(-90deg);
+  }
+}
+
+@-ms-keyframes ngdialog-flipout-horizontal {
+  0% {
+    opacity: 1;
+    -ms-transform : rotateY(0deg);
+  }
+  100% {
+    opacity: 0;
+    -ms-transform : rotateY(-90deg);
+  }
+}
+
+/* Dialog styling */
+
+.ngdialog,
+.ngdialog *,
+.ngdialog *:before,
+.ngdialog *:after {
+  .box-sizing();
+}
+
+.ngdialog {
+  position:                   fixed;
+  overflow:                   auto;
+  z-index:                    10000;
+  top:                        0;
+  right:                      0;
+  bottom:                     0;
+  left:                       0;
+  text-align:                 center;
+  -webkit-overflow-scrolling: touch;
+
+  &.ngdialog-closing .ngdialog-overlay {
+    .animation(ngdialog-fadeout 0.5s);
+    -webkit-backface-visibility: hidden;
+  }
+
+  &.ngdialog-closing .ngdialog-content {
+    .animation(ngdialog-fadeout 0.5s);
+    -webkit-backface-visibility: hidden;
+  }
+}
+
+.ngdialog-overlay {
+  position:                    fixed;
+  background:                  rgba(0, 0, 0, 0.4);
+  top:                         0;
+  right:                       0;
+  bottom:                      0;
+  left:                        0;
+  height:                      20000px;
+  .animation(ngdialog-fadein 0.5s);
+  -webkit-backface-visibility: hidden;
+}
+
+.ngdialog-content {
+  background:                  white;
+  .animation(ngdialog-fadein 0.5s);
+  -webkit-backface-visibility: hidden;
+}
+
+.ngdialog-close:before {
+  font-family: 'Helvetica', Arial, sans-serif;
+  content:     '\00D7';
+  cursor:      pointer;
+}
+
+body.ngdialog-open {
+  overflow: hidden;
+}
+
+.ngdialog.ngdialog-theme-admin {
+  padding-bottom: 100px;
+  padding-top:    100px;
+  .perspective(1300px);
+  .perspective-origin(50% 150px);
+
+  &.ngdialog-closing .ngdialog-content {
+    .animation(0.5s ease 0s normal none 1 ngdialog-flipout-horizontal);
+  }
+
+  .ngdialog-content {
+    .animation(0.5s ease 0s normal none 1 ngdialog-flipin-horizontal);
+    background: none repeat scroll 0 0 #FFFFFF;
+    border:     5px solid @current-user-bg-color;
+    display:    inline-block;
+    margin:     0 auto;
+    max-width:  600px;
+    padding:    25px;
+    position:   relative;
+    text-align: left;
+    .transform-style(preserve-3d);
+    width:      auto;
+  }
+
+  .ngdialog-close {
+    cursor:   pointer;
+    position: absolute;
+    right:    0;
+    top:      0;
+
+    &:before {
+      background:  none repeat scroll 0 0 @current-user-bg-color;
+      color:       #FFFFFF;
+      display:     block;
+      font-family: "Helvetica Neue", sans-serif;
+      font-size:   1em;
+      font-weight: 100;
+      height:      1.25em;
+      line-height: 1px;
+      overflow:    hidden;
+      padding-top: 0.5em;
+      right:       0;
+      text-align:  center;
+      text-indent: 1px;
+      top:         0;
+      width:       1.25em;
+    }
+  }
+}

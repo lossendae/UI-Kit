@@ -1,0 +1,133 @@
+$input-background-color: #FFFFFF;
+$input-border-color: #CCCCCC;
+$input-border-color-active: #10A4EE;
+$input-color: #555555;
+
+.form-block {
+  margin-bottom: 0.5em;
+}
+
+label {
+  display:       block;
+  font-size:     1em;
+  line-height:   1em;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="password"],
+input[type="datetime"],
+input[type="tel"],
+input[type="date"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="number"],
+textarea {
+  background:     none repeat scroll 0 0 $input-background-color;
+  border:         1px solid $input-border-color;
+  color:          $input-color;
+  display:        inline-block;
+  font-size:      1em;
+  line-height:    1em;
+  padding:        0.5em;
+  vertical-align: middle;
+  width:          100%;
+  @include border-radius(2px);
+  @include box-sizing;
+  &:hover,
+  &:focus {
+    background:   none repeat scroll 0 0 $input-background-color;
+    outline:      medium none;
+    border-color: $input-border-color-active;
+  }
+}
+
+.select {
+  background:     none repeat scroll 0 0 $input-background-color;
+  border:         1px solid $input-border-color;
+  display:        inline-block;
+  position:       relative;
+  vertical-align: middle;
+  min-width:      150px;
+  width:          100%;
+  @include border-radius(2px);
+  @include box-sizing;
+  > select {
+    background:  none repeat scroll 0 0 $input-background-color;
+    border:      0 none;
+    color:       $input-color;
+    display:     block;
+    font-size:   1em;
+    line-height: 1em;
+    padding:     0.45em;
+    margin:      0;
+    width:       100%;
+  }
+  &:hover,
+  &:active {
+    color:          $input-color;
+    border:         1px solid $input-border-color-active;
+    outline-offset: 0;
+  }
+  &:before,
+  &:after {
+    content:        "";
+    pointer-events: none;
+    position:       absolute;
+  }
+  &:before {
+    background: inherit;
+    bottom:     0;
+    right:      0;
+    top:        0;
+    width:      29px;
+  }
+  &:after {
+    border-color: $input-border-color rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    border-image: none;
+    border-style: solid;
+    border-width: 5px;
+    height:       0;
+    right:        13px;
+    top:          50%;
+    width:        0;
+  }
+}
+
+form.aligned {
+  float: left;
+  width: 100%;
+  @include box-sizing;
+  label {
+    text-align: right;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 1em 0 0;
+    width: 25%;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="date"],
+  input[type="month"],
+  input[type="week"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="number"],
+  textarea,
+  .select {
+    display: inline-block;
+    width: 70%;
+  }
+}
